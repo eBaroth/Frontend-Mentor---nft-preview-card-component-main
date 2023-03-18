@@ -59,6 +59,7 @@ body {
 }
 
 .cube {
+    position: relative;
     width: 275px;
     height: 275px;
     margin: 0 auto;
@@ -70,10 +71,33 @@ body {
     border-radius: 0.75rem;
 }
 
+.cube::after {
+    content: "";
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cube:hover::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    border-radius: 0.75rem;
+    background: url(images/icon-view.svg) no-repeat rgba(0, 255, 247,0.5);
+    background-position: center;
+    cursor: pointer;
+}
+
 .main-title {
     font-size: var(--fs-h1);
     font-weight: var(--fs-black);
     color: var(--white);
+}
+
+.main-title:hover {
+    color: var(--cyan);
+    cursor: pointer;
 }
 
 .main-txt {
@@ -127,4 +151,9 @@ body {
 
 .avatar-text span {
     color: var(--white);
+}
+
+.avatar-text span:hover {
+    color: var(--cyan);
+    cursor: pointer;
 }
